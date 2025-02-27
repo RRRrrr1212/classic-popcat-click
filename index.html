@@ -36,9 +36,9 @@
             user-select: none; /* 防止文字被選取 */
         }
 
-        /* 文字 div 背景圖片 用 id 設定 imgs/op.png 圖片靠下 填滿容器 contain 不重複 */
+        /* 文字 div 背景圖片 用 id 設定 imgs/p.png 圖片靠下 填滿容器 contain 不重複 */
         #p {
-            background-image: url('imgs/op.png');
+            background-image: url('imgs/p.png');
             background-position: bottom;
             background-size: contain;
             background-repeat: no-repeat;
@@ -52,5 +52,36 @@
     <img class="title" src="imgs/popcat.svg" alt="POPCAT">
     <div class="cat-img" id="p">0</div>
 </div>
+<script>
+    // 計數器基本邏輯
+    let count = 0;
+    let p = document.getElementById('p');
+    p.innerText = count;
+
+    function addCount() {
+        count++;
+    }
+    // 註冊滑鼠按下的事件
+    document.addEventListener('mousedown', function () {
+        addCount();
+        p.innerText = count;
+    });
+
+    // 當滑鼠按下，切換張嘴圖片
+    document.addEventListener('mousedown', function () {
+        p.style.backgroundImage = 'url("imgs/op.png")';
+    });
+
+    // 當滑鼠放開，便恢復原來圖片
+    document.addEventListener('mouseup', function () {
+        p.style.backgroundImage = 'url("imgs/p.png")';
+    });
+
+    // 當滑鼠按下，播放 pops/pop1.mp3
+    document.addEventListener('mousedown', function () {
+        let audio = new Audio('pops/pop1.mp3');
+        audio.play();
+    });
+</script>
 </body>
 </html>
