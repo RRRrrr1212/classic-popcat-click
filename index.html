@@ -4,41 +4,45 @@
 <head>
     <title>POPCAT CLASSIC</title>
     <style>
-        /*容器 box 高度100vh flex排版方向column 水平置中*/
+        /* 容器 box 高度100vh flex排版方向column 水平置中 */
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
             height: 100vh;
+            background-color: #bdaa90; /* 容器樣式 背景顏色 #bdaa90 */
         }
-        /*容器樣式 背景顏色 #bdaa90*/
-        .container {
-            background-color: #bdaa90;
+
+        /* 字型 sans-serif */
+        body {
+            font-family: sans-serif;
+            margin: 0; /* body box 編距為0 */
         }
-        /*標題 box 寬度80% 上方間距 2em*/
+
+        /* 標題 box 寬度80% 上方間距 2em */
         .title {
             width: 80%;
             margin-top: 2em;
+            max-width: 600px; /* 標題 box 最大寬度 600px */
         }
-        /*文字 box 寬度100%*/
+
+        /* 文字 box 寬度100% */
         .cat-img {
             width: 100%;
-            font-size: 5em;
-            text-align: center;
-        }
-        /*文字樣式 文字置中 文字白色 大小80px -webkit-text-stroke 3px 黑色*/
-        .cat-img {
+            font-size: 80px; /* 文字樣式 文字白色 大小80px -webkit-text-stroke 3px 黑色 */
             text-align: center;
             color: white;
-            font-size: 80px;
             -webkit-text-stroke: 3px black;
+            user-select: none; /* 防止文字被選取 */
         }
-        /*文字 div 背景圖片 用 id 設定imgs/p.png 圖片靠下 填滿容器contain 不重複*/
+
+        /* 文字 div 背景圖片 用 id 設定 imgs/op.png 圖片靠下 填滿容器 contain 不重複 */
         #p {
-            background-image: url('imgs/p.png');
+            background-image: url('imgs/op.png');
             background-position: bottom;
             background-size: contain;
             background-repeat: no-repeat;
+            flex: 1; /* 文字 div 排版填滿剩餘空間 */
         }
     </style>
 </head>
